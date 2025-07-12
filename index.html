@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Spa - Sally Salon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --pink: #fce4ec;
+      --dark-pink: #c2185b;
+      --white: #fff;
+      --bg-texture: url('https://www.transparenttextures.com/patterns/white-wall.png');
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-texture), linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    .cover {
+      height: 100vh;
+      background: #f8cfd4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+    }
+    .cover img {
+      width: 200px;
+      margin-bottom: 1rem;
+      animation: fadeInDown 2s ease-in-out;
+    }
+    .cover button {
+      background: var(--dark-pink);
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .cover button:hover {
+      transform: scale(1.05);
+      background: #880e4f;
+    }
+    @keyframes fadeInDown {
+      0% {opacity: 0; transform: translateY(-30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    .main-content { display: none; }
+    header {
+      text-align: center;
+      padding: 3rem 2rem 1rem;
+    }
+    header h2 {
+      font-size: 2.5rem;
+      color: var(--dark-pink);
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    section h3 {
+      font-size: 2rem;
+      color: var(--dark-pink);
+      margin-bottom: 1rem;
+    }
+    .manfaat-text, .manfaat-point, .noted {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+    .card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card i {
+      font-size: 2rem;
+      color: var(--dark-pink);
+      margin-bottom: 1rem;
+    }
+    .highlight-promo {
+      background: #fff4f7;
+      border-left: 5px solid var(--dark-pink);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+    .highlight-promo p { margin: 0.5rem 0; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: var(--dark-pink);
+      color: white;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #a31553;
+    }
+    .instagram-link {
+      display: inline-block;
+      background: #fff;
+      color: #c2185b;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .instagram-link:hover {
+      background: #c2185b;
+      color: white;
+    }
+    footer {
+      background: var(--dark-pink);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    @media (max-width: 600px) {
+      .cover img { width: 140px; }
+      .cover button { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+ <!-- Audio -->
+  <audio id="backsound" loop>
+    <source src="BackSound.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <div class="cover" id="cover">
+    <img src="Logo.jpeg" alt="Logo Sally Salon Spa" />
+    <button onclick="mulaiUndangan()">Lihat Promo</button>
+  </div>
+
+  <div class="main-content" id="mainContent">
+    <header>
+      <h2>Short History</h2>
+      <p class="subtitle">Sally Salon Spa berdiri sejak 2012, yang bergerak di bidang perawatan tubuh dan rambut. Kita memiliki terapis terapis yg berpengalaman</p>
+    </header>
+
+    <section data-aos="fade-up">
+      <h3>Body Spa Benefits</h3>
+      <p class="manfaat-text">Tujuan dari body spa bukan hanya untuk kecantikan, tapi juga untuk kesehatan dan kesejahteraan secara menyeluruh—baik fisik maupun mental.</p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h3>Penawaran Paket Body SPA</h3>
+      <div class="highlight-promo">
+        <p><strong>Harga Normal: Rp205.000</strong></p>
+        <p><strong>Harga Promo: Rp160.000/orang*</strong></p>
+        <p><em>*Minimal 3 orang</em></p>
+        <p><i class="fas fa-check"></i> Full Body Massage</p>
+        <p><i class="fas fa-check"></i> Lulur Tradisional</p>
+        <p><i class="fas fa-check"></i> Sauna + Mandi Susu</p>
+      </div>
+      <p class="noted">FYI: Harga paket ini di luar paket umum di Sally Salon Spa. Ini adalah penawaran khusus hanya untuk guru dan karyawan.</p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h3>Other Benefits of Body Spa</h3>
+      <div class="grid">
+        <div class="card"><i class="fas fa-spa"></i><p>Relaksasi & Mengurangi Stres</p></div>
+        <div class="card"><i class="fas fa-leaf"></i><p>Detoksifikasi Tubuh</p></div>
+        <div class="card"><i class="fas fa-sun"></i><p>Menyehatkan Kulit</p></div>
+        <div class="card"><i class="fas fa-heartbeat"></i><p>Peredaran Darah Lancar</p></div>
+        <div class="card"><i class="fas fa-moon"></i><p>Tidur Lebih Nyenyak</p></div>
+        <div class="card"><i class="fas fa-heart"></i><p>Me Time Berkualitas</p></div>
+      </div>
+      <p class="manfaat-point">Body spa bukan sekadar memanjakan diri, tapi cara menyeluruh untuk menjaga kesehatan, meningkatkan kecantikan alami, dan menenangkan pikiran.</p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h3>Facility Gallery</h3>
+      <div class="gallery-grid">
+        <img src="RuanganDalam.jpeg" alt="Spa Room">
+        <img src="RuanganLuar.jpeg">
+        <img src="Ruangan02.jpeg">
+        <img src="Nail.jpeg" alt="Nail Art">        
+      </div>
+    </section>
+
+<section id="pesan" data-aos="fade-up">
+  <h3>Reservasi Sekarang</h3>
+  <form onsubmit="return redirectWhatsApp(event)">
+    <input type="text" id="nama" placeholder="Nama Anda" required />
+    <input type="number" id="jumlah" placeholder="Jumlah Orang" required />
+    <input type="date" id="tanggal" required />
+    <textarea id="catatan" placeholder="Catatan Tambahan"></textarea>
+    <button type="submit">Kirim ke WhatsApp</button>
+  </form>
+</section>
+
+<section data-aos="fade-up" style="text-align:center; padding: 3rem 2rem;">
+  <h3>Follow the Business Location Signs To the Entrance</h3>
+  <a href="https://www.google.com/maps/place/Sally+Family+Salon+And+Spa/@-6.8811536,107.5485266,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68e437d23c1457:0xdc03b09dd57cf9f9!8m2!3d-6.8811536!4d107.5511015!16s%2Fg%2F1pzrf1y1k?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="display:inline-block; text-decoration:none;">
+    <div style="width:280px; margin:1rem auto; border:2px solid #c2185b; border-radius:12px; padding:1rem; background:#fff4f7; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+      <p style="margin:0; color:#c2185b; font-weight:bold;">Click here to open in Google Maps</p>
+    </div>
+  </a>
+</section>
+
+<section data-aos="fade-up" style="text-align:center; padding: 3rem 2rem;">
+  <h3>Please follow our instagram account</h3>
+  <a href="https://instagram.com/sallysalonteam" class="instagram-link" target="_blank">@sallysalonteam</a>
+</section>
+
+    <section style="text-align:center;">
+      <h3>Control Music</h3>
+      <button onclick="toggleMusic()" style="background: white; color: #c2185b; border: 1px solid #c2185b; padding: 0.5rem 1rem; border-radius: 20px;">
+        Play / Mute Music
+      </button>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sally Salon Spa - Jl. Amir Mahmud 399 A Cimahi (seberang Yogja Griya Cibabat)</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function mulaiUndangan() {
+      document.getElementById("cover").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+
+      const audio = document.getElementById("backsound");
+      audio.play().catch(err => {
+        console.warn("Audio tidak bisa otomatis play:", err);
+      });
+    }
+
+    function toggleMusic() {
+      const audio = document.getElementById("backsound");
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  function redirectWhatsApp(event) {
+    event.preventDefault();
+    const nama = document.getElementById('nama').value;
+    const jumlah = document.getElementById('jumlah').value;
+    const tanggal = document.getElementById('tanggal').value;
+    const catatan = document.getElementById('catatan').value;
+    const pesan = `Halo, Saya Ingin Reservasi Body Spa 
+    Atas Nama : ${nama} 
+    Untuk ${jumlah} Orang 
+    Tanggal ${tanggal}
+    Catatan: ${catatan}`;
+    window.open(`https://wa.me/6282126030482?text=${encodeURIComponent(pesan)}`);
+  }
+</script>
+</body>
+</html>

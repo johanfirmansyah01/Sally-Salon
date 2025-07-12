@@ -1,0 +1,165 @@
+:root {
+  --pink: #fce4ec;
+  --dark-pink: #c2185b;
+  --white: #fff;
+}
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+  color: #333;
+  overflow-x: hidden;
+}
+.bubbles span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 192, 203, 0.3);
+  animation: rise 10s infinite ease-in;
+  border-radius: 50%;
+}
+@keyframes rise {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-1000px); }
+}
+.bubbles span:nth-child(1) { left: 20%; animation-duration: 12s; }
+.bubbles span:nth-child(2) { left: 50%; animation-duration: 15s; }
+.bubbles span:nth-child(3) { left: 70%; animation-duration: 10s; }
+.bubbles span:nth-child(4) { left: 90%; animation-duration: 20s; }
+.bubbles span:nth-child(5) { left: 40%; animation-duration: 18s; }
+
+.cover {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1588776814546-3f9dc22f75fd?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+}
+.cover h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+}
+.cover .subtext {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.cover button {
+  background: var(--dark-pink);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cover button:hover { background: #880e4f; }
+
+.main-content { display: none; }
+header { text-align: center; padding: 3rem 1rem 1rem; }
+header h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--dark-pink);
+}
+.subtitle { font-size: 1.2rem; color: #555; }
+
+section { padding: 4rem 2rem; text-align: center; }
+section h3 { font-size: 2rem; color: var(--dark-pink); margin-bottom: 2rem; }
+
+.highlight-promo {
+  background: #fff4f7;
+  border-left: 5px solid var(--dark-pink);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+}
+.highlight-promo .benefits p {
+  text-align: left;
+  margin: 0.5rem 0;
+  color: #333;
+  font-weight: 500;
+}
+.highlight-promo .benefits i {
+  color: green;
+  margin-right: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card i {
+  font-size: 2rem;
+  color: var(--dark-pink);
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+form button {
+  background: var(--dark-pink);
+  color: white;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+footer {
+  background: var(--dark-pink);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
